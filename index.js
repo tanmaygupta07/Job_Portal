@@ -1,18 +1,29 @@
 import express from 'express'
 import path from 'path';
-// import { dirname } from 'path';
-// import { fileURLToPath } from 'url';
-
+import userRouter from './src/routes/user.route.js'
+import session from 'express-session';
 const app = express();
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+app.use(
+    session({
+        secret: "ItIsASecretKey", //you can keep anything as your secret key
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: false }
+    })
+);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 app.use(express.static(path.resolve('./', 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join('./', 'views'));
 
-app.get('/', (req, res) => {
-    res.render('layout');
-})
+// app.get('/', (req, res) => {
+//     res.render('layout');
+// });
+
+app.use(userRouter);
 
 export default app;

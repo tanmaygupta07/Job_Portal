@@ -35,8 +35,6 @@ export default class UserModel {
     //to validate user for login
     static validateLogin = (user) => {
         const { email } = user;
-        return UserModel.users.find((user) => {
-            return user.email === email;
-        });
+        return UserModel.users.find((u) => u.email === email);
     }
 }
