@@ -27,7 +27,7 @@ export default class JobModel {
                     name: 'John Doe',
                     email: 'johndoe@gmail.com',
                     contact: 9876543210,
-                    resumePath: 'resume.pdf'
+                    // resumePath: 'resume.pdf'
                 }
             ]
         },
@@ -74,7 +74,7 @@ export default class JobModel {
         }
     ]
 
-    contructor(
+    constructor(
         jobCategory,
         jobDesignation,
         jobLocation,
@@ -133,12 +133,14 @@ export default class JobModel {
 
     //function to find a job by its ID
     static findJobByID = (id) => {
-        return JobModel.jobs.find((j) => j.id === id);
+        const numericId = parseInt(id, 10);
+        return JobModel.jobs.find((j) => j.id === numericId);
     }
 
     //function to update a job
     static updateJob = (id, data) => {
-        const index = JobModel.jobs.findIndex((j) => j.id === id);
+        const numericId = parseInt(id, 10);
+        const index = JobModel.jobs.findIndex((j) => j.id === numericId);
         if (index !== -1) {
             JobModel.jobs[index] = {
                 ...JobModel.jobs[index],
@@ -147,8 +149,10 @@ export default class JobModel {
         }
     }
 
+    //function to delete a job
     static deleteJob = (id) => {
-        const index = JobModel.jobs.findIndex((j) => j.id === id);
+        const numericId = parseInt(id, 10);
+        const index = JobModel.jobs.findIndex((j) => j.id === numericId);
         if (index !== -1) {
             JobModel.jobs.splice(index, 1);
         }
@@ -156,8 +160,12 @@ export default class JobModel {
 
     //function to add a new applicant for a job
     static addNewApplicant = (id, applicantData) => {
-        const { name, email, contact, resumePath } = applicantData;
-        const index = JobModel.jobs.findIndex((j) => j.id === id)
+        console.log("Application Data:", applicantData);
+        const numericId = parseInt(id, 10);
+        const { name, email, contact } = applicantData;
+        console.log("Name:", name, "Email: ", email, "Contact: ", contact);
+
+        const index = JobModel.jobs.findIndex((j) => j.id === numericId)
 
         if (index === -1) {
             return null;
@@ -169,8 +177,8 @@ export default class JobModel {
             applicantID: newApplicantID,
             name,
             email,
-            contact,
-            resumePath
+            contact
+            // resumePath
         });
 
         return JobModel.jobs[index].applicants;
@@ -178,7 +186,8 @@ export default class JobModel {
 
     //function to get all the applicants of a given job using its id
     static getAllApplicants = (id) => {
-        const index = JobModel.jobs.findIndex((j) => j.id === id);
+        const numericId = parseInt(id, 10);
+        const index = JobModel.jobs.findIndex((j) => j.id === numericId);
         return index !== -1 ? JobModel.jobs[index].applicants : null;
     };
 }
