@@ -147,6 +147,13 @@ export default class JobModel {
         }
     }
 
+    static deleteJob = (id) => {
+        const index = JobModel.jobs.findIndex((j) => j.id === id);
+        if (index !== -1) {
+            JobModel.jobs.splice(index, 1);
+        }
+    }
+
     //function to add a new applicant for a job
     static addNewApplicant = (id, applicantData) => {
         const { name, email, contact, resumePath } = applicantData;
@@ -174,11 +181,4 @@ export default class JobModel {
         const index = JobModel.jobs.findIndex((j) => j.id === id);
         return index !== -1 ? JobModel.jobs[index].applicants : null;
     };
-
-    static deleteJob = (id) => {
-        const index = JobModel.jobs.findIndex((j) => j.id === id);
-        if (index !== -1) {
-            JobModel.jobs.splice(index, 1);
-        }
-    }
 }
