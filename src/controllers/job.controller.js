@@ -17,8 +17,8 @@ export default class JobController {
     //render all the jobs
     getJobs = (req, res) => {
         const jobs = JobModel.getAllJobs();
-        res.status(200).send(jobs);
-        // res.render('list-all-jobs', { jobs, user: req.session.user });
+        // res.status(200).send(jobs);
+        res.render('list-all-jobs', { jobs, user: req.session.user });
     }
 
     //find the job by its id and render it

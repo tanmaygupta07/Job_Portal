@@ -13,7 +13,7 @@ router.post('/', jobController.newJob);
 
 router.get('/', jobController.getJobs);
 
-router.get('/:id', auth, jobController.findJobByID);
+router.get('/:id', jobController.findJobByID);
 
 router.get('/update/:id', auth, jobController.renderUpdateForm);
 
