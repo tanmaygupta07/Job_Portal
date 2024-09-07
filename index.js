@@ -4,8 +4,12 @@ import expressLayouts from "express-ejs-layouts";
 import userRouter from './src/routes/user.route.js'
 import jobRouter from './src/routes/job.router.js';
 import session from 'express-session';
+import cookieParser from 'cookie-parser';
+import { lastVisit } from './src/middlewares/lastVisitMiddleware.js';
 const app = express();
 
+app.use(cookieParser());
+app.use(lastVisit);
 app.use(
     session({
         secret: "ItIsASecretKey", //you can keep anything as your secret key

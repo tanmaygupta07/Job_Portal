@@ -27,7 +27,7 @@ export default class JobModel {
                     name: 'John Doe',
                     email: 'johndoe@gmail.com',
                     contact: 9876543210,
-                    // resumePath: 'resume.pdf'
+                    resumePath: 'resume.pdf'
                 }
             ]
         },
@@ -160,10 +160,10 @@ export default class JobModel {
 
     //function to add a new applicant for a job
     static addNewApplicant = (id, applicantData) => {
-        console.log("Application Data:", applicantData);
+        // console.log("Application Data:", applicantData);
         const numericId = parseInt(id, 10);
-        const { name, email, contact } = applicantData;
-        console.log("Name:", name, "Email: ", email, "Contact: ", contact);
+        const { name, email, contact, resumePath } = applicantData;
+        // console.log("Name:", name, "Email: ", email, "Contact: ", contact);
 
         const index = JobModel.jobs.findIndex((j) => j.id === numericId)
 
@@ -177,8 +177,8 @@ export default class JobModel {
             applicantID: newApplicantID,
             name,
             email,
-            contact
-            // resumePath
+            contact,
+            resumePath
         });
 
         return JobModel.jobs[index].applicants;

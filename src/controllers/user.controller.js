@@ -44,7 +44,7 @@ export default class UserController {
                 console.log(err);
             }
             else {
-                res.redirect('/login');
+                res.redirect('/user/login');
             }
         })
     }

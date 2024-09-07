@@ -1,3 +1,4 @@
+import { sendConfirmationMail } from "../middlewares/sendMail.js";
 import JobModel from "../models/job.model.js";
 
 export default class JobController {
@@ -54,13 +55,14 @@ export default class JobController {
     }
 
     // add new applicant
-    newApplicant = (req, res) => {
+    newApplicant = async (req, res) => {
         const id = req.params.id;
         const { name, email, contact } = req.body;
-        console.log("Request body: ",req.body);
-        // const resumePath = req.file.filename;
-        // JobModel.addNewApplicant(id, name, email, contact, resumePath);
-        const addedApplicant = JobModel.addNewApplicant(id, {name, email, contact});
+        // console.log("Request body: ",req.body);
+        const resumePath = req.file.filename;
+        JobModel.addNewApplicant(id, { name, email, contact, resumePath });
+        await sendConfirmationMail(email);
+        const addedApplicant = JobModel.addNewApplicant(id, { name, email, contact });
         res.status(200).send(addedApplicant);
         // res.redirect('/jobs');
     }
