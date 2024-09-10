@@ -25,8 +25,8 @@ export default class JobController {
     findJobByID = (req, res) => {
         const id = req.params.id;
         const jobData = JobModel.findJobByID(id);
-        res.status(200).send(jobData);
-        // res.render("job-details", { data: jobData, user: req.session.user });
+        // res.status(200).send(jobData);
+        res.render("job-details", { data: jobData, user: req.session.user });
     }
 
     //render the update job form
