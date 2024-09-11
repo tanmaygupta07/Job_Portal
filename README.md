@@ -28,7 +28,6 @@ This project is a web-based job portal platform focused on recruiter login, feat
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: HTML, CSS, JavaScript (EJS for templating)
-- **Database**: MongoDB
 - **Authentication**: Express-Session for session management
 - **Deployment**: Render
 
