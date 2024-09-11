@@ -14,7 +14,6 @@ export default class UserController {
 
     //user login
     userLogin = (req, res) => {
-        console.log('Request Body:', req.body);
         const { email, password } = req.body;
 
         if (!email || !password) {

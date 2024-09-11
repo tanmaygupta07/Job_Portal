@@ -25,6 +25,10 @@ export default class JobController {
     findJobByID = (req, res) => {
         const id = req.params.id;
         const jobData = JobModel.findJobByID(id);
+        if (!jobData) {
+            // If jobData is not found, return a 404 error or render a "job not found" page
+            return res.status(404).render("404", { message: "Job not found", user: req.session.user });
+        }
         // res.status(200).send(jobData);
         res.render("job-details", { data: jobData, user: req.session.user });
     }
@@ -42,39 +46,38 @@ export default class JobController {
         const id = req.params.id;
         JobModel.updateJob(id, req.body);
         const updatedJob = JobModel.findJobByID(id)
-        res.status(200).send(updatedJob);
-        // res.redirect(`/jobs/${id}`);
+        // res.status(200).send(updatedJob);
+        res.redirect(`/jobs/${id}`);
     }
 
     // delete a job
     deleteJob = (req, res) => {
         const id = req.params.id;
         JobModel.deleteJob(id);
-        res.status(200).send({ msg: "Job deleted successfully" })
-        // res.redirect('/jobs');
+        // res.status(200).send({ msg: "Job deleted successfully" })
+        res.redirect('/jobs');
     }
 
     // add new applicant
     newApplicant = async (req, res) => {
         const id = req.params.id;
         const { name, email, contact } = req.body;
-        // console.log("Request body: ",req.body);
         const resumePath = req.file.filename;
         JobModel.addNewApplicant(id, { name, email, contact, resumePath });
         await sendConfirmationMail(email);
         const addedApplicant = JobModel.addNewApplicant(id, { name, email, contact });
-        res.status(200).send(addedApplicant);
-        // res.redirect('/jobs');
+        // res.status(200).send(addedApplicant);
+        res.redirect('/jobs');
     }
 
     //get all the applicants
     allApplicant = (req, res) => {
         const id = req.params.id;
         const resp = JobModel.getAllApplicants(id);
-        res.status(200).send(resp);
-        // res.render('all-applicants', {
-        //     allApplicant: resp,
-        //     user: req.session.user
-        // });
+        // res.status(200).send(resp);
+        res.render('all-applicants', {
+            allApplicant: resp,
+            user: req.session.user
+        });
     }
 }

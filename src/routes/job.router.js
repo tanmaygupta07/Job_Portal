@@ -19,7 +19,7 @@ router.get('/update/:id', auth, jobController.renderUpdateForm);
 
 router.post('/update/:id', auth, jobController.updateJob);
 
-router.delete('/delete/:id', auth, jobController.deleteJob);
+router.get('/delete/:id', auth, jobController.deleteJob);
 
 router.post('/apply/:id', uploadFile.single("resume"), jobController.newApplicant);
 
