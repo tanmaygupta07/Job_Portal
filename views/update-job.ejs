@@ -1,0 +1,74 @@
+<div class="conatiner p-3 mx-auto w-50 form-box my-5 rounded-md">
+    <h2 style="color: #181642;" class="text-center mb-3">Update Job</h2>
+
+    <form action="/jobs/update/<%=job.id%>" method="post">
+        <div class="input-group mb-3">
+            <select name="jobCategory" class="form-select" required>
+                <option selected disabled>Select New Job Category</option>
+                <option value="Tech">Tech</option>
+                <option value="Non-Tech">Non-Tech</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <select name="jobDesignation" class="form-select" required>
+                <option selected disabled>Select New Job Designation</option>
+                <option value="Back-End Developer">Back-End Developer</option>
+                <option value="DevOps">DevOps</option>
+                <option value="Front-End Developer">Front-End Developer</option>
+                <option value="Full-Stack Developer">Full-Stack Developer</option>
+                <option value="HR">HR</option>
+                <option value="JAVA Developer">JAVA Developer</option>
+                <option value="MEAN Developer">MEAN Developer</option>
+                <option value="MERN Developer">MERN Developer</option>
+                <option value="SDE">SDE</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Job Location</label>
+            <input type="text" name="jobLocation" value="<%=job.jobLocation%>" class="form-control" placeholder="Enter New Job Location" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Company Name</label>
+            <input name="companyName" type="text" value="<%=job.companyName%>" class="form-control" placeholder="Enter Company Name" required />
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Salary Range</label>
+            <input name="salary" type="text" value="<%=job.salary%>" class="form-control" placeholder="Enter Salary Range" required />
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Total Positions</label>
+            <input name="numberOfOpening" type="text" value="<%=job.numberOfOpening%>" class="form-control"
+                placeholder="Enter number of available positions" required />
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Skills Required</label>
+            <select name="skillsRequired" class="form-select" required multiple>
+                <option disabled>Select Skills required for this Job</option>
+                <option selected value="Angular">Angular</option>
+                <option value="C++">C++</option>
+                <option value="Data Structures & Algo">Data Structures & Algo</option>
+                <option value="Express">Express</option>
+                <option value="Java">Java</option>
+                <option value="MongoDB">MongoDB</option>
+                <option value="NodeJs">NodeJs</option>
+                <option value="React">React</option>
+                <option value="SpringBoot">SpringBoot</option>
+                <option value="SQL">SQL</option>
+
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text">Apply By</label>
+            <input name="applyBy" type="date" value="<%=job.applyBy%>" class="form-control" required />
+        </div>
+
+        <button type="submit" class="w-100 mb-3 mt-2 btn btn-md btn-success">Update</button>
+    </form>
+</div>

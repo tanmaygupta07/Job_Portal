@@ -33,8 +33,8 @@ export default class JobController {
     renderUpdateForm = (req, res) => {
         const id = req.params.id;
         const jobData = JobModel.findJobByID(id);
-        res.status(200).send(jobData);
-        // res.render("update-job", { job: jobData });
+        // res.status(200).send(jobData);
+        res.render("update-job", { job: jobData });
     }
 
     //update the job
