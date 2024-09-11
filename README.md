@@ -57,6 +57,7 @@ This project is a web-based job portal platform focused on recruiter login, feat
 ## Project Structure
 
 ```
+├── public              # Static assets (CSS, images, etc.)
 ├── views               # EJS templates for the frontend
 │   ├── layout.ejs      # Main layout template
 │   ├── index.ejs       # Homepage
@@ -67,9 +68,50 @@ This project is a web-based job portal platform focused on recruiter login, feat
 ├── models              # Mongoose models for MongoDB
 │   ├── User.js         # Recruiter model
 │   ├── Job.js          # Job listing model
-├── public              # Static assets (CSS, images, etc.)
+
 ├── server.js           # Entry point for the application
 └── package.json        # Project dependencies
+
+├── public # Static assets
+│   ├── css # Stylesheets
+│   │   ├── 404.css
+│   │   └── index.css
+│   ├── html # HTML files for emails
+│   │   └── mailTemplate.html
+│   ├── images # Image files
+│   │   └── banner.png
+│   └── uploads # Uploaded files
+│   |   └── resume.pdf
+├── src # Source files
+│   ├── controllers # Controllers for business logic
+│   │   ├── job.controller.js
+│   │   └── user.controller.js
+│   ├── middlewares # Middleware functions
+│   │   ├── authMiddleware.js
+│   │   ├── fileUploadMiddleware.js
+│   │   ├── lastVisitMiddleware.js
+│   │   └── sendMail.js
+│   ├── models # Database models
+│   │   ├── job.model.js
+│   │   └── user.model.js
+│   └── routes # Application routes
+│   |   ├── job.route.js
+│   |   └── user.route.js
+├── views # EJS templates for the frontend
+│   ├── 404.ejs
+│   ├── all-applicants.ejs
+│   ├── job-details.ejs
+│   ├── landing-page.ejs
+│   ├── layout.ejs
+│   ├── list-all-jobs.ejs
+│   ├── new-job.ejs
+│   ├── update-job.ejs
+│   └── user-login.ejs
+├── favicon.ico # Favicon
+├── index.js # Application entry point
+├── package-lock.json # NPM lock file
+├── package.json # NPM dependencies
+└── server.js # Server setup
 ```
 
 ## Future Enhancements
