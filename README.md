@@ -35,7 +35,7 @@ This project is a web-based job portal platform focused on recruiter login, feat
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/job-portal.git
+   git clone https://github.com/tanmaygupta07/Job_Portal.git
    ```
 2. Navigate to the project folder:
    ```bash
