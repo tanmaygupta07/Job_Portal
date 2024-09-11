@@ -27,7 +27,7 @@ export default class JobController {
         const jobData = JobModel.findJobByID(id);
         if (!jobData) {
             // If jobData is not found, return a 404 error or render a "job not found" page
-            return res.status(404).render("404", { message: "Job not found", user: req.session.user });
+            return res.status(404).render("404", { msg: "Job not found", user: req.session.user });
         }
         // res.status(200).send(jobData);
         res.render("job-details", { data: jobData, user: req.session.user });
