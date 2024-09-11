@@ -39,20 +39,12 @@ This project is a web-based job portal platform focused on recruiter login, feat
    ```
 2. Navigate to the project folder:
    ```bash
-   cd job-portal
+   cd Job_Portal
    ```
 3. Install the necessary dependencies:
    ```bash
    npm install
    ```
-4. Set up environment variables:
-   - Create a `.env` file in the root directory.
-   - Add the following variables:
-     ```bash
-     PORT=3000
-     DB_URL=<Your MongoDB URL>
-     SESSION_SECRET=<Your Session Secret>
-     ```
 
 ## Running the Application
 
