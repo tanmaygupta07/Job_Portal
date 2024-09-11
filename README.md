@@ -57,32 +57,32 @@ This project is a web-based job portal platform focused on recruiter login, feat
 ## Project Structure
 
 ```
-├── public                  # Static assets
-│   ├── css                 # Stylesheets
+├── public                   # Static assets
+│   ├── css                  # Stylesheets
 │   │   ├── 404.css
 │   │   └── index.css
-│   ├── html                # HTML files for emails
+│   ├── html                 # HTML files for emails
 │   │   └── mailTemplate.html
-│   ├── images              # Image files
+│   ├── images               # Image files
 │   │   └── banner.png
-│   └── uploads             # Uploaded files
+│   └── uploads              # Uploaded files
 │       └── resume.pdf
-├── src                     # Source files
-│   ├── controllers         # Controllers for business logic
+├── src                      # Source files
+│   ├── controllers          # Controllers for business logic
 │   │   ├── job.controller.js
 │   │   └── user.controller.js
-│   ├── middlewares         # Middleware functions
+│   ├── middlewares          # Middleware functions
 │   │   ├── authMiddleware.js
 │   │   ├── fileUploadMiddleware.js
 │   │   ├── lastVisitMiddleware.js
 │   │   └── sendMail.js
-│   ├── models              # Database models
+│   ├── models               # Database models
 │   │   ├── job.model.js
 │   │   └── user.model.js
-│   └── routes              # Application routes
+│   └── routes               # Application routes
 │       ├── job.route.js
 │       └── user.route.js
-├── views                   # EJS templates for the frontend
+├── views                    # EJS templates for the frontend
 │   ├── 404.ejs
 │   ├── all-applicants.ejs
 │   ├── job-details.ejs
@@ -92,61 +92,9 @@ This project is a web-based job portal platform focused on recruiter login, feat
 │   ├── new-job.ejs
 │   ├── update-job.ejs
 │   └── user-login.ejs
-├── .gitignore              # Ignored files for Git
-├── favicon.ico             # Favicon
-├── index.js                # Application entry point
-├── package-lock.json       # NPM lock file
-├── package.json            # NPM dependencies
-└── server.js               # Server setup
-
-_____________________________________________________________________________
-
-_____________________________________________________________________________
-
-├── public # Static assets
-│   ├── css # Stylesheets
-│   │   ├── 404.css
-│   │   └── index.css
-│   ├── html # HTML files for emails
-│   │   └── mailTemplate.html
-│   ├── images # Image files
-│   │   └── banner.png
-│   └── uploads # Uploaded files
-│   |   └── resume.pdf
-├── src # Source files
-│   ├── controllers # Controllers for business logic
-│   │   ├── job.controller.js
-│   │   └── user.controller.js
-│   ├── middlewares # Middleware functions
-│   │   ├── authMiddleware.js
-│   │   ├── fileUploadMiddleware.js
-│   │   ├── lastVisitMiddleware.js
-│   │   └── sendMail.js
-│   ├── models # Database models
-│   │   ├── job.model.js
-│   │   └── user.model.js
-│   └── routes # Application routes
-│   |   ├── job.route.js
-│   |   └── user.route.js
-├── views # EJS templates for the frontend
-│   ├── 404.ejs
-│   ├── all-applicants.ejs
-│   ├── job-details.ejs
-│   ├── landing-page.ejs
-│   ├── layout.ejs
-│   ├── list-all-jobs.ejs
-│   ├── new-job.ejs
-│   ├── update-job.ejs
-│   └── user-login.ejs
-├── favicon.ico # Favicon
-├── index.js # Application entry point
-├── package-lock.json # NPM lock file
-├── package.json # NPM dependencies
-└── server.js # Server setup
+├── favicon.ico              # Favicon
+├── index.js                 # Application entry point
+├── package-lock.json        # NPM lock file
+├── package.json             # NPM dependencies
+└── server.js                # Server setup
 ```
-
-## Future Enhancements
-
-- Add candidate profiles and job applications.
-- Enhance recruiter dashboard with analytics.
-- Implement email notifications for recruiters and candidates.
