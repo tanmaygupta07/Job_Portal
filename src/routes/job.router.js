@@ -7,7 +7,7 @@ const jobController = new JobController();
 
 const router = express.Router();
 
-router.get('/new', auth, jobController.renderJobForm);
+router.get('/newJob', auth, jobController.renderJobForm);
 
 router.post('/', jobController.newJob);
 

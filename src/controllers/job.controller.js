@@ -10,8 +10,8 @@ export default class JobController {
     // add new job
     newJob = (req, res) => {
         JobModel.createNewJob(req.body);
-        res.status(200).json({ msg: "Job Added Succesfully" })
-        // res.redirect('/jobs');
+        // res.status(200).json({ msg: "Job Added Succesfully" })
+        res.redirect('/jobs');
     };
 
     //render all the jobs
