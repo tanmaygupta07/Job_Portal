@@ -63,7 +63,31 @@ html {
     margin-left: 30px;
 }
 
-.modal-footer i{
+.skills{
+    margin: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+    justify-content: center;
+}
+
+.modal-footer i {
     font-size: 22px;
     margin: 0 2px;
+}
+
+.form-box {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-top: 5px solid #181642;
+    border-left: 3px solid #181642;
+    border-radius: 10px;
+}
+
+.card-header {
+    gap: 5px;
+}
+
+.bg-theme{
+    background-color: #0e0d23;
+    color: white;
 }

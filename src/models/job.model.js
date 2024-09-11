@@ -160,17 +160,14 @@ export default class JobModel {
 
     //function to add a new applicant for a job
     static addNewApplicant = (id, applicantData) => {
-        // console.log("Application Data:", applicantData);
         const numericId = parseInt(id, 10);
         const { name, email, contact, resumePath } = applicantData;
-        // console.log("Name:", name, "Email: ", email, "Contact: ", contact);
 
         const index = JobModel.jobs.findIndex((j) => j.id === numericId)
 
         if (index === -1) {
             return null;
         }
-
         const newApplicantID = JobModel.jobs[index].applicants.length + 1;
 
         JobModel.jobs[index].applicants.push({

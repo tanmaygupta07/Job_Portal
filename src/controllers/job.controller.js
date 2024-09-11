@@ -64,9 +64,8 @@ export default class JobController {
         const { name, email, contact } = req.body;
         const resumePath = req.file.filename;
         JobModel.addNewApplicant(id, { name, email, contact, resumePath });
+        JobModel.addNewApplicant(id, { name, email, contact });
         await sendConfirmationMail(email);
-        const addedApplicant = JobModel.addNewApplicant(id, { name, email, contact });
-        // res.status(200).send(addedApplicant);
         res.redirect('/jobs');
     }
 
