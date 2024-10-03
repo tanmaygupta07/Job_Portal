@@ -1,8 +1,6 @@
 
 # Job Portal - Recruiter Session-Based Authentication System
 
-[![Deploy on Render](https://img.shields.io/badge/Deployed%20on-Render-blue)](https://job-com-f7a7.onrender.com/)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -11,11 +9,10 @@
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [Project Structure](#project-structure)
-- [Future Enhancements](#future-enhancements)
 
 ## Introduction
 
-This project is a web-based job portal platform focused on recruiter login, featuring session-based user authentication. The platform enables recruiters to manage job listings and interact with potential candidates. The project is deployed and available [here](https://job-com-f7a7.onrender.com/).
+This project is a web-based job portal platform focused on recruiter login, featuring session-based user authentication. The platform enables recruiters to manage job listings and interact with potential candidates.
 
 ## Features
 
